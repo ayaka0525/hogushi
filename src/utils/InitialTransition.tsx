@@ -22,7 +22,7 @@ const InitialTransition = ({ children }: any) => {
   return (
     <div className="absolute flex items-center justify-center">
       <motion.div
-        className="relative w-full bg-black"
+        className="relative w-full bg-[--sub-color]"
         initial="initial"
         animate="animate"
         variants={blackBox}

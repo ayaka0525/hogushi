@@ -1,92 +1,244 @@
+@import url(../src/components/Contact.css);
+@import url(../src/components/Footer.css);
+@import url(../src/components/Header.css);
+@import url(../src/components/Price.css);
+@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Noto+Sans+JP:wght@622&family=Noto+Serif+JP:wght@200..900&family=Yusei+Magic&display=swap");
+
 :root {
-  --black-color: #010000;
-  --white-color: #ffffff;
-  --lightgray-color: #e6e6e6;
+  --main-color: #c4d8c8;
+  --sub-color: #c29c9c;
+  --third-color: rgb(67, 217, 174);
+  --lightgray-color: rgb(142, 142, 142);
 }
 
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
 .App {
   font-size: 18px;
   height: 100vh;
   width: 100%;
-  /* font-weight: 400; */
-  /* font-style: normal; */
+  font-family: "Noto Serif JP", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+  color: rgb(87, 87, 87);
 }
 
-header {
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 初期の影 */
+}
+
+button:hover {
+  transform: translateY(2px); /* 下方向に2px移動 */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); /* 影を小さくして沈み込むような効果 */
+}
+
+.hero {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  padding-top: 90px; /* headerの高さと同じ */
+  padding-left: 30px;
+  background-image: url("../src/Images/main.webp"); /* 背景画像 */
+
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  background-position: center; /* 画像を中央に配置 */
+  background-size: cover; /* 画像を要素のサイズに合わせてカバー */
+
   width: 100%;
-  background: black;
+  height: 75vh; /* 必要に応じて高さを調整 */
+}
+
+.Booking-Form {
+  flex: 1;
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+  margin: 0 10px;
+}
+
+.date-input {
+  padding: 10px; /* 内側の余白 */
+  border: 1px solid #ccc; /* 枠線のスタイル */
+  border-radius: 4px; /* 角を丸くする */
+  max-width: 600px; /* 最大横幅を設定 */
+  width: 100%; /* 横幅を100%に設定 */
+}
+
+.hero button {
+  background-color: var(--sub-color);
+  padding: 10px 15px;
+  margin: 0 10px 0 20px;
+  max-width: 180px; /* 最大横幅を設定 */
+  width: 100%; /* 横幅を100%に設定 */
   color: white;
-  height: 90px;
-  position: fixed;
-  z-index: 10;
 }
 
-header .logo h3 {
-  margin: 0;
-  padding: 0;
+.hero button:hover {
+  background-color: var(--third-color);
+  color: black;
+}
+
+.main-text {
+  flex: 1;
+  padding: 80px 20px; /* 内側の余白を追加 */
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+  padding: 20px;
+  max-width: 800px; /* 最大横幅を設定 */
+  width: 100%; /* 横幅を100%に設定 */
+}
+
+.hero article {
+  padding: 20px;
+  letter-spacing: 2px; /* 文字の間隔を2pxあける */
+}
+.main-text article h2 {
+  margin-bottom: 20px;
+}
+
+.name {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.description {
+  display: flex;
+  background-color: var(--main-color);
   color: white;
+  justify-content: center;
+  text-align: left;
+  height: 15vh;
+  width: 100%;
+  padding: 10px;
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
+.description article {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
-nav ul li {
-  list-style: none;
-  display: inline-block;
-  margin-right: 30px;
+.main-container,
+.text-container {
+  display: flex;
+  flex-wrap: wrap; /* 横並びを維持しつつ、必要に応じて折り返す */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: space-between; /* セクションの間にスペースを追加 */
+  margin: 20px; /* マージンを追加 */
 }
 
-nav ul li a {
-  font-size: 19px;
-  text-decoration: none;
-  color: var(--white-color);
-  transition: all 0.2s;
+.text-section {
+  flex: 1 1 60%; /* 横幅を60%に設定、残りをinfo-sectionに分配 */
+  padding: 20px; /* 内側の余白を追加 */
+  box-sizing: border-box; /* paddingを含めたサイズ計算 */
+  text-align: left;
 }
 
-nav ul li a:hover {
-  color: #48b4af;
-}
-
-.container {
-  height: 100vh;
-  padding: 120px;
-}
-
-.container h1 {
-  text-align: center;
-  font-size: 50px;
+.info-section {
+  flex: 1 1 30%; /* 横幅を30%に設定 */
+  display: flex;
+  justify-content: center; /* 画像を中央揃え */
+  padding: 20px; /* 内側の余白を追加 */
+  box-sizing: border-box; /* paddingを含めたサイズ計算 */
 }
 
 .profileImage {
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  width: 100%; /* 画像の横幅を100%に設定 */
+  height: auto; /* 縦横比を維持 */
+  max-width: 450px; /* 最大横幅を設定 */
+  border: 5px solid var(--lightgray-color); /* ボーダーを追加 */
+  border-color: var(--lightgray-color);
 }
 
-img {
-  width: 300px;
-  height: 500px;
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* 縦並びにする */
+    align-items: flex-start; /* 左揃えにする */
+  }
+
+  .text-section,
+  .info-section {
+    flex: 1 1 100%; /* 幅を100%に設定 */
+  }
+
+  .info-section {
+    display: flex;
+    justify-content: flex-start; /* 左揃えにする */
+  }
 }
 
-.service {
-  margin-top: 80px;
-  margin-bottom: 60px;
+#skill {
+  margin-top: 50px;
+  max-width: 1200px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+
+  flex-wrap: wrap; /* 子要素が折り返すようにする */
+  margin-left: auto; /* 左右のマージンを自動に設定 */
+  margin-right: auto; /* 左右のマージンを自動に設定 */
+}
+
+#skill h2 {
+  width: 100%;
+}
+
+.skill-Card .card {
+  background-color: #ededed;
+  color: var(--lightgray-color);
+  width: 230px;
+  height: 230px;
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow: 11px 5px 18px -8px #bababa;
+  border-style: none;
+  overflow: hidden; /* 初期位置で子要素が見えないようにする */
 }
 
 #skill img {
-  object-fit: cover;
-  margin-bottom: 12px;
-  margin-top: 12px;
-  height: 300px;
+  width: 60px;
+  height: auto;
+  margin: auto;
 }
 
 #skill button {
-  margin-bottom: 100px;
+  background-color: var(--lightgray-color);
+  width: 220px;
+  padding: 10px 0;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#skill button:hover {
+  background-color: var(--third-color);
+  color: white;
+}
+
+/* App.css */
+
+/* フェードインアニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-Card {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* スムーズに動く */
+}
+
+.skill-Card.show {
+  animation: fadeInUp 0.8s forwards; /* 表示時にフェードイン */
 }

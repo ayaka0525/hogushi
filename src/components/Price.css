@@ -1,0 +1,52 @@
+.price-container {
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px;
+  height: 100vh;
+}
+
+.custom-H2 {
+  width: 100%;
+  height: 5vh; /* 高さを設定（必要に応じて調整） */
+  margin: 0 auto; /* コンテナ全体を中央寄せ */
+  position: relative;
+  overflow: hidden; /* はみ出した部分を隠す */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000000 20%,
+    #000000 80%,
+    transparent
+  );
+}
+
+.custom-H2 h2 {
+  font-size: 1.2rem;
+  color: var(--main-color);
+  writing-mode: horizontal-tb; /* 文字を横に */
+  text-orientation: upright; /* 文字を正しい向きに保つ */
+  transform: scaleY(2); /* 縦方向に伸ばす */
+  letter-spacing: 0.1em; /* 文字の間隔調整 */
+  line-height: 1; /* 行間を詰める */
+  display: inline-block; /* inline-blockでアニメーションをスムーズに */
+  white-space: nowrap; /* テキストの折り返しを防止 */
+  animation: scroll 70s linear infinite; /* アニメーションの設定 */
+}
+
+/* 横スクロールアニメーション */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* スタートを画面の右端から */
+  }
+
+  100% {
+    transform: translateX(-100%); /* 最後を画面の左端に */
+  }
+}
+
+.cost-container {
+  width: 100%;
+}

@@ -1,0 +1,36 @@
+.footer {
+  background: linear-gradient(135deg, var(--sub-color), #ffefcb);
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--lightgray-color);
+}
+
+.footer a {
+  font-size: medium;
+  color: var(--lightgray-color);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* h5とulを中央に配置 */
+  padding: 10px;
+}
+
+.footer a:hover {
+  color: var(--sub-color);
+}
+
+.follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  font-size: small;
+  background-color: var(--sub-color);
+  width: 100%;
+}
